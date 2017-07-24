@@ -29,7 +29,8 @@ public class LoginRequest {
         String responseBody = response.body().string();
         System.out.println(response.code());
         System.out.println(responseBody);
-        LoginResponse loginResponse = new ObjectMapper().readValue(responseBody,LoginResponse.class);
-        System.out.println(loginResponse.getMustConfirmSafetyInfo());
+        Gson gson = new Gson();
+        LoginResponse loginResponse = gson.fromJson(responseBody, LoginResponse.class );
+        System.out.println(loginResponse.isMustConfirmSafetyInfo());
     }
 }
