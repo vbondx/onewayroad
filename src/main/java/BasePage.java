@@ -15,19 +15,19 @@ public class BasePage {
         this.driver = driver;
     }
 
-    @AndroidFindBy(id = "top_item")
+    @AndroidFindBy(id = "top_item")             //bottomNavi MA-
     private MobileElement bottomTop;
 
-    @AndroidFindBy (id = "category_item")
+    @AndroidFindBy (id = "category_item")       //bottomNavi MA-
     private MobileElement bottomCategory;
 
-    @AndroidFindBy (id = "favorite_item")
+    @AndroidFindBy (id = "favorite_item")       //bottomNavi MA-
     private MobileElement bottomFavorite;
 
-    @AndroidFindBy (id = "profile_item")
+    @AndroidFindBy (id = "profile_item")        //bottomNavi MA-
     private MobileElement bottomProfile;
 
-    @AndroidFindBy (id = "searchViewStub")
+    @AndroidFindBy (id = "searchViewStub")      //New Search Field MA-
     private MobileElement headerSearchField;
 
     @AndroidFindBy (id = "action_basket")
