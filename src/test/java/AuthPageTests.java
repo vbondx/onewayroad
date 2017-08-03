@@ -144,7 +144,7 @@ public class AuthPageTests extends BaseTest {
 
     @Test
 
-    public void openGooglePlayCabinetPage() {
+    public void openGooglePlayPage() {
         BasePage basePage = new BasePage(driver);
         basePage.goToUnAuthProfilePage();
         UnAuthProfilePage unAuthProfilePage = new UnAuthProfilePage(driver);
