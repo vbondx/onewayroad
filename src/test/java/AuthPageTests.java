@@ -117,6 +117,21 @@ public class AuthPageTests extends BaseTest {
 
     @Test
 
+    public void passwordInputErrorShows() {
+        BasePage basePage = new BasePage(driver);
+        basePage.goToUnAuthProfilePage();
+        UnAuthProfilePage unAuthProfilePage = new UnAuthProfilePage(driver);
+        unAuthProfilePage.goToSignInPage();
+        SignInPage signInPage = new SignInPage(driver);
+        signInPage.clearEmailField();
+        signInPage.enterEmailOrPhone("+380632350342");
+        signInPage.clearPasswordField();
+        signInPage.submitNotValidData();
+        Assert.assertEquals(signInPage.passwordFieldIsRequired(),true);
+    }
+
+    @Test
+
     public void displaysPassword(){
         BasePage basePage = new BasePage(driver);
         basePage.goToUnAuthProfilePage();

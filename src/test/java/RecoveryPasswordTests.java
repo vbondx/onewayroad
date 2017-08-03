@@ -66,4 +66,23 @@ public class RecoveryPasswordTests extends BaseTest {
         Assert.assertEquals(recoveryPasswordNextPage.instructionTextDisplayed(),true);
     }
 
+    @Test
+
+    public void openMailPage() {
+        BasePage basePage = new BasePage(driver);
+        basePage.goToUnAuthProfilePage();
+        UnAuthProfilePage unAuthProfilePage = new UnAuthProfilePage(driver);
+        unAuthProfilePage.goToSignInPage();
+        SignInPage signInPage = new SignInPage(driver);
+        signInPage.goToForgotPasswordPage();
+        RecoveryPasswordPage forgotPasswordPage = new RecoveryPasswordPage(driver);
+        forgotPasswordPage.clearData();
+        forgotPasswordPage.enterEmailOrPhone("minnnune@gmail.com");
+        forgotPasswordPage.goToNextPage();
+        RecoveryPasswordNextPage recoveryPasswordNextPage = new RecoveryPasswordNextPage(driver);
+        recoveryPasswordNextPage.goToMail();
+        GoogleMailPage googleMailPage = new GoogleMailPage(driver);
+        Assert.assertEquals(googleMailPage.googleMailisDisplayed(), true);
+    }
+
 }
