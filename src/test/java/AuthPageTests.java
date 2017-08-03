@@ -1,3 +1,4 @@
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -95,7 +96,7 @@ public class AuthPageTests extends BaseTest {
         signInPage.clearPasswordField();
         signInPage.enterValidPassword("1gp7mn24");
         signInPage.submitNotValidData();
-        Assert.assertEquals(signInPage.notValidData(), true);
+        Assert.assertEquals(signInPage.buttonLoginIsDisplayed(), true);
     }
 
     @Test
