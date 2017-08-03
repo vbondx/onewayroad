@@ -13,7 +13,7 @@ public class AuthPageTests extends BaseTest {
         unAuthProfilePage.goToSignInPage();
         SignInPage signInPage = new SignInPage(driver);
         signInPage.clearEmailField();
-        signInPage.enterNotValidEmailOrPhone("minnnune@gmail,com");
+        signInPage.enterEmailOrPhone("minnnune@gmail,com");
         signInPage.clearPasswordField();
         signInPage.enterValidPassword("1gp7mn24");
         signInPage.submitNotValidData();
@@ -29,7 +29,7 @@ public class AuthPageTests extends BaseTest {
         unAuthProfilePage.goToSignInPage();
         SignInPage signInPage = new SignInPage(driver);
         signInPage.clearEmailField();
-        signInPage.enterValidEmail("minnnune@gmail.com");
+        signInPage.enterEmailOrPhone("minnnune@gmail.com");
         signInPage.clearPasswordField();
         signInPage.submitNotValidData();
         Assert.assertEquals(signInPage.passwordFieldIsRequired(), true);
@@ -59,7 +59,7 @@ public class AuthPageTests extends BaseTest {
         unAuthProfilePage.goToSignInPage();
         SignInPage signInPage = new SignInPage(driver);
         signInPage.clearEmailField();
-        signInPage.enterNotValidEmailOrPhone("380632350342");
+        signInPage.enterEmailOrPhone("380632350342");
         signInPage.clearPasswordField();
         signInPage.enterValidPassword("1gp7mn24");
         signInPage.submitNotValidData();
@@ -75,7 +75,7 @@ public class AuthPageTests extends BaseTest {
         unAuthProfilePage.goToSignInPage();
         SignInPage signInPage = new SignInPage(driver);
         signInPage.clearEmailField();
-        signInPage.enterNotValidEmailOrPhone("+38063235034");
+        signInPage.enterEmailOrPhone("+38063235034");
         signInPage.clearPasswordField();
         signInPage.enterValidPassword("1gp7mn24");
         signInPage.submitNotValidData();
@@ -91,7 +91,7 @@ public class AuthPageTests extends BaseTest {
         unAuthProfilePage.goToSignInPage();
         SignInPage signInPage = new SignInPage(driver);
         signInPage.clearEmailField();
-        signInPage.enterNotValidEmailOrPhone("+3806323503422");
+        signInPage.enterEmailOrPhone("+3806323503422");
         signInPage.clearPasswordField();
         signInPage.enterValidPassword("1gp7mn24");
         signInPage.submitNotValidData();
@@ -107,7 +107,7 @@ public class AuthPageTests extends BaseTest {
         unAuthProfilePage.goToSignInPage();
         SignInPage signInPage = new SignInPage(driver);
         signInPage.clearEmailField();
-        signInPage.enterNotValidEmailOrPhone("+380632350342");
+        signInPage.enterEmailOrPhone("+380632350342");
         signInPage.clearPasswordField();
         signInPage.enterValidPassword("1gp7mn24");
         signInPage.submitNotValidData();
@@ -134,7 +134,7 @@ public class AuthPageTests extends BaseTest {
         unAuthProfilePage.goToSignInPage();
         SignInPage signInPage = new SignInPage(driver);
         signInPage.clearEmailField();
-        signInPage.enterNotValidEmailOrPhone("minnnune@gmail.com");
+        signInPage.enterEmailOrPhone("minnnune@gmail.com");
         signInPage.clearPasswordField();
         signInPage.enterValidPassword("1gp7mn24");
         signInPage.goToProfilePageAfterAuthorization();

@@ -25,12 +25,8 @@ public class RecoveryPasswordPage extends BasePage {
     @AndroidFindBy (xpath = "//android.widget.TextView[@text='Телефон в формате: +380XXXXXXX']")
     private MobileElement inputErrorPhone;
 
-    public void incorrectEmailOrPhone (String incorrectEmailOrPhone) {
-        emailPhoneField.sendKeys(incorrectEmailOrPhone);
-    }
-
-    public void validEmailOrPhone (String validEMailOrPhone){
-        emailPhoneField.sendKeys(validEMailOrPhone);
+    public void enterEmailOrPhone (String emailOrPhone) {
+        emailPhoneField.sendKeys(emailOrPhone);
     }
 
     public boolean inputErrorEmailDisplayed() {

@@ -35,12 +35,8 @@ public class SignInPage extends BasePage {
     @AndroidFindBy (xpath = "//android.widget.TextView[@text='Обязательно для заполнения']")
     private MobileElement inputErrorPasswordField;
 
-    public void enterValidEmail (String validEmail){
-        emailPhoneField.sendKeys(validEmail);
-    }
-
-    public void enterNotValidEmailOrPhone (String notValidPhoneOrEmail) {
-        emailPhoneField.sendKeys(notValidPhoneOrEmail);
+    public void enterEmailOrPhone (String emailOrPhone) {
+        emailPhoneField.sendKeys(emailOrPhone);
     }
 
     public void enterValidPassword (String validPassword) {

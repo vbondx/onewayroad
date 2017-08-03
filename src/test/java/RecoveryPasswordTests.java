@@ -14,7 +14,7 @@ public class RecoveryPasswordTests extends BaseTest {
         signInPage.goToForgotPasswordPage();
         RecoveryPasswordPage forgotPasswordPage = new RecoveryPasswordPage(driver);
         forgotPasswordPage.clearData();
-        forgotPasswordPage.incorrectEmailOrPhone("minnnune@gmail,com");
+        forgotPasswordPage.enterEmailOrPhone("minnnune@gmail,com");
         Assert.assertEquals(forgotPasswordPage.inputErrorEmailDisplayed(), true);
     }
 
@@ -29,7 +29,7 @@ public class RecoveryPasswordTests extends BaseTest {
         signInPage.goToForgotPasswordPage();
         RecoveryPasswordPage forgotPasswordPage = new RecoveryPasswordPage(driver);
         forgotPasswordPage.clearData();
-        forgotPasswordPage.incorrectEmailOrPhone("+38063235034");
+        forgotPasswordPage.enterEmailOrPhone("+38063235034");
         Assert.assertEquals(forgotPasswordPage.inputErrorPhoneDisplayed(),true);
     }
 
@@ -44,7 +44,7 @@ public class RecoveryPasswordTests extends BaseTest {
         signInPage.goToForgotPasswordPage();
         RecoveryPasswordPage forgotPasswordPage = new RecoveryPasswordPage(driver);
         forgotPasswordPage.clearData();
-        forgotPasswordPage.incorrectEmailOrPhone("+3806323503422");
+        forgotPasswordPage.enterEmailOrPhone("+3806323503422");
         forgotPasswordPage.submitNotValidData();
         Assert.assertEquals(forgotPasswordPage.emailOrPhoneFieldDisplayed(),true);
     }
@@ -60,7 +60,7 @@ public class RecoveryPasswordTests extends BaseTest {
         signInPage.goToForgotPasswordPage();
         RecoveryPasswordPage forgotPasswordPage = new RecoveryPasswordPage(driver);
         forgotPasswordPage.clearData();
-        forgotPasswordPage.validEmailOrPhone("minnnune@gmail.com");
+        forgotPasswordPage.enterEmailOrPhone("minnnune@gmail.com");
         forgotPasswordPage.goToNextPage();
         RecoveryPasswordNextPage recoveryPasswordNextPage = new RecoveryPasswordNextPage(driver);
         Assert.assertEquals(recoveryPasswordNextPage.instructionTextDisplayed(),true);
