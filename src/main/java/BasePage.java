@@ -59,14 +59,14 @@ public class BasePage {
         return new CategoriesPage(driver);
     }
 
-    public ProductListPage search(String search_value){
+    public ProductsListPage search(String search_value){
         headerSearchField.sendKeys(search_value);
-        return new ProductListPage(driver);
+        return new ProductsListPage(driver);
     }
 
-    public ProductListPage searchWithSuggest(String serach_value) {
+    public ProductsListPage searchWithSuggest(String serach_value) {
         headerSearchField.sendKeys(serach_value);
-        return new ProductListPage(driver);                                 //FIXME: ADD THIS SEARCH METHOD
+        return new ProductsListPage(driver);                                 //FIXME: ADD THIS SEARCH METHOD
     }
 
     public BasketPage goToBasket() {
