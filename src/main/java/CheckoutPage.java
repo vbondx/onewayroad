@@ -127,8 +127,8 @@ public class CheckoutPage extends BasePage {
          departmentList.get(d).click();
      }
 
-     public void enterComment(String comment) {
-         commentsField.sendKeys(comment);
+     public void enterComment(String comments) {
+         commentsField.sendKeys(comments);
      }
 
      public void clickOnCheckBox() {
