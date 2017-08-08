@@ -2,9 +2,6 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
-/**
- * Created by v.bondarenko on 27.07.17.
- */
 public class RecoveryPasswordPage extends BasePage {
     public RecoveryPasswordPage(AppiumDriver<MobileElement> driver) {
         super(driver);

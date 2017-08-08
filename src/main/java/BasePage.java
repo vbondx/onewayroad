@@ -4,9 +4,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 
-/**
- * Created by v.bondarenko on 24.07.17.
- */
+
 public class BasePage {
 
     AppiumDriver<MobileElement> driver;

@@ -4,9 +4,6 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 
 import java.util.List;
 
-/**
- * Created by v.bondarenko on 27.07.17.
- */
 public class ProductsListPage extends BasePage {
     public ProductsListPage(AppiumDriver<MobileElement> driver) {
         super(driver);

@@ -4,9 +4,6 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by v.bondarenko on 27.07.17.
- */
 public class ProductCardPage extends BasePage {                         //FIXME:NEED TO DEVELOP TESTS WITH NON-ACTUAL PRICES, DISCOUNTS ETC.
     public ProductCardPage(AppiumDriver<MobileElement> driver) {        //FIXME: ADD TEST TO ENABLED/DISABLED FAV
         super(driver);
