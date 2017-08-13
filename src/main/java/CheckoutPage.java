@@ -112,7 +112,7 @@ public class CheckoutPage extends BasePage {
      public void chooseDeliveryMethod(int m) {
          deliveryMethod.click();
          List<MobileElement> deliveryMethodList = deliveryMethodListView.findElementsByClassName("android.widget.CheckedTextView");
-         deliveryMethodList.get(m).click();     // FOR NOVAPOSHTA,POCHTOMATI (1. DEPARTMENT 2. TO ADRESS)
+         deliveryMethodList.get(m).click();     // FOR NOVAPOSHTA,POCHTOMATI (1. DEPARTMENT 2. TO ADDRESS)
      }
 
      public void chooseCity(int c, String city) {

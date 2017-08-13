@@ -46,11 +46,11 @@ public class BaseTest {
 
     }
 
-    @BeforeMethod
+    /*@BeforeMethod
 
     public void setUpBeforeMethod() {
         driver.launchApp();
-    }
+    }*/
 
 
     @AfterMethod

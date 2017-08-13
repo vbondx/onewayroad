@@ -24,10 +24,10 @@ public class ProductsListPage extends BasePage {
     @AndroidFindBy (xpath = "//android.widget.TextView[@text='ПОЗВОНИТЬ']")
     private MobileElement buyButtonCall;
 
-    List<MobileElement> itemElementsList = viewSearch.findElementsById("llItemListing");
+    List<MobileElement> itemElementsList = viewSearch.findElementsById("cvListing");
 
     public ProductCardPage goToProductCardPage(int i) {
-        itemElementsList.get(i).click();
+        itemElementsList.get(i).findElementById("llItemListing").click();
         return new ProductCardPage(driver);
     }
 
@@ -36,12 +36,12 @@ public class ProductsListPage extends BasePage {
         return new BasketPage(driver);
     }
 
-    public void buyProduct() {
-        buyButton.click();
+    public void buyProduct(int i) {
+        itemElementsList.get(i).findElementByXPath("//android.widget.TextView[@text='КУПИТЬ']").click();
     }
 
     public BasketPage goToBasketPageFromCard(int i) {
-        itemElementsList.get(i).findElementByXPath("//android.widget.TextView[@text='В КОРЗИНУ']").click();
+        itemElementsList.get(i).findElementByXPath("//android.widget.TextView[@text='В корзину']").click();
         return new BasketPage(driver);
     }
 }

@@ -1,8 +1,17 @@
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidKeyCode;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import javafx.scene.input.KeyCode;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.PageFactory;
+
+import java.io.IOException;
+import java.security.Key;
+
+import static io.appium.java_client.android.AndroidKeyCode.*;
 
 
 public class BasePage {
@@ -58,12 +67,14 @@ public class BasePage {
     }
 
     public ProductsListPage search(String search_value){
-        headerSearchField.sendKeys(search_value);
+        headerSearchField.click();
+        driver.findElementById("search_view").sendKeys(search_value);        //FIXME: ENTER NOT WORKS WITH SEARCH
+        ((AndroidDriver) driver).pressKeyCode(KEYCODE_SEARCH);
         return new ProductsListPage(driver);
     }
 
-    public ProductsListPage searchWithSuggest(String serach_value) {
-        headerSearchField.sendKeys(serach_value);
+    public ProductsListPage searchWithSuggest(String search_value) {
+        headerSearchField.sendKeys(search_value);
         return new ProductsListPage(driver);                                 //FIXME: ADD THIS SEARCH METHOD
     }
 
