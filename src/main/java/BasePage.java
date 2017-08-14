@@ -69,7 +69,7 @@ public class BasePage {
     public ProductsListPage search(String search_value){
         headerSearchField.click();
         driver.findElementById("search_view").sendKeys(search_value);        //FIXME: ENTER NOT WORKS WITH SEARCH
-        ((AndroidDriver) driver).pressKeyCode(KEYCODE_SEARCH);
+        ((AndroidDriver) driver).pressKeyCode(66);
         return new ProductsListPage(driver);
     }
 

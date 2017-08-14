@@ -41,7 +41,7 @@ public class ProductsListPage extends BasePage {
     }
 
     public BasketPage goToBasketPageFromCard(int i) {
-        itemElementsList.get(i).findElementByXPath("//android.widget.TextView[@text='В корзину']").click();
+        itemElementsList.get(i).findElementByXPath("//android.widget.TextView[@text='В КОРЗИНУ']").click();
         return new BasketPage(driver);
     }
 }

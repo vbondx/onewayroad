@@ -18,7 +18,7 @@ public class BaseTest {
 
 
     @BeforeTest
-    public void setUp() throws InterruptedException {
+    public void setUp() {
         File classpathRoot = new File(System.getProperty("user.dir"));
         File appDir = new File(classpathRoot, "/Android/app");
         File app = new File(appDir, "app-prodProm-debug.apk");

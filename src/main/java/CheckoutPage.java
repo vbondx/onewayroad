@@ -5,6 +5,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.aspectj.lang.annotation.AdviceName;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class CheckoutPage extends BasePage {
     public CheckoutPage(AppiumDriver<MobileElement> driver) {
@@ -27,19 +28,13 @@ public class CheckoutPage extends BasePage {
     private MobileElement paymentType;
 
     @AndroidFindBy (id = "select_dialog_listview")
-    private MobileElement paymentListView;
+    private MobileElement dialogListView;
 
     @AndroidFindBy (id = "tilDelivery")
     private MobileElement deliveryType;
 
-    @AndroidFindBy (id = "select_dialog_listview")
-    private MobileElement deliveryListView;
-
     @AndroidFindBy (id = "tilEdit")
     private MobileElement deliveryMethod;
-
-    @AndroidFindBy (id = "select_dialog_listview")
-    private MobileElement deliveryMethodListView;
 
     @AndroidFindBy (xpath = "//android.widget.EditText[@text='Фамилия*']") // ALL DELIVERY TYPES
     private MobileElement lastNameField;
@@ -49,6 +44,9 @@ public class CheckoutPage extends BasePage {
 
     @AndroidFindBy (id = "recyclerView")
     private MobileElement cityListView;
+
+    @AndroidFindBy (xpath = "//android.widget.EditText[@text='Регион*']")
+    private MobileElement regionField;
 
     @AndroidFindBy (id = "search_container")
     private MobileElement searchField;
@@ -90,11 +88,12 @@ public class CheckoutPage extends BasePage {
 
      public void enterEmail (String email) {
          emailField.sendKeys(email);
+         driver.hideKeyboard();
      }
 
      public void choosePaymentType(int t) {
          paymentType.click();
-         List<MobileElement> paymentList = paymentListView.findElementsByClassName("android.widget.LinearLayout");
+         List<MobileElement> paymentList = dialogListView.findElementsByClassName("android.widget.LinearLayout");
          paymentList.get(t).click();            // 1. PREORDER 2. CASH 3. CASH ON DELIVERY
      }
 
@@ -103,28 +102,48 @@ public class CheckoutPage extends BasePage {
          driver.findElement(MobileBy.AndroidUIAutomator(locator));
      }
 
-     public void chooseDevliveryType(int t) {
+     public void chooseDeliveryType(int t) {
          deliveryType.click();
-         List<MobileElement> deliveryList = deliveryListView.findElementsByClassName("android.widget.LinearLayout");
+         List<MobileElement> deliveryList = dialogListView.findElementsByClassName("android.widget.LinearLayout");
          deliveryList.get(t).click();           // DIFFERENT DELIVERY TYPES
      }
 
      public void chooseDeliveryMethod(int m) {
          deliveryMethod.click();
-         List<MobileElement> deliveryMethodList = deliveryMethodListView.findElementsByClassName("android.widget.CheckedTextView");
+         List<MobileElement> deliveryMethodList = dialogListView.findElementsByClassName("android.widget.CheckedTextView");
          deliveryMethodList.get(m).click();     // FOR NOVAPOSHTA,POCHTOMATI (1. DEPARTMENT 2. TO ADDRESS)
      }
 
      public void chooseCity(int c, String city) {
+         cityField.click();
          searchField.sendKeys(city);
          List<MobileElement> cityList = cityListView.findElementsById("label");
          cityList.get(c).click();
+     }
+
+     public void chooseRegion(int r) {
+         regionField.click();
+         List<MobileElement> regionList = dialogListView.findElementsById("text1");
+         regionList.get(r).click();
      }
 
      public void chooseDepartment(int d, String department) {
          searchField.sendKeys(department);
          List<MobileElement> departmentList = cityListView.findElementsById("label");
          departmentList.get(d).click();
+     }
+
+     public void enterLastName(String lastName) {
+         lastNameField.sendKeys(lastName);
+     }
+
+     public void enterZipCode(String zipCode) {
+         zipCodeField.sendKeys(zipCode);
+     }
+
+     public void enterAddress(String address) {
+         addressField.sendKeys(address);
+         driver.hideKeyboard();
      }
 
      public void enterComment(String comments) {
@@ -141,6 +160,7 @@ public class CheckoutPage extends BasePage {
 
      public OrderThankYouPage createOrder() {
          sendOrder.click();
+         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
          return new OrderThankYouPage(driver);
      }
 }
