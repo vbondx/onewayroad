@@ -27,7 +27,14 @@ public class CheckoutTests extends BaseTest {
         checkoutPage.enterAddress("address");
         checkoutPage.submit();
         OrderThankYouPage orderThankYouPage = new OrderThankYouPage(driver);
-        Assert.assertEquals("Менеджер компании noname свяжется с вами в ближайшее время", orderThankYouPage.thankYouPageTextDisplayed() );
+        if (orderThankYouPage.textDisplayed() == true) {
+            Assert.assertTrue(orderThankYouPage.textDisplayed());
+            System.out.println("Test passed");
+        } else {
+            Assert.assertTrue(orderThankYouPage.textDisplayed());
+            System.out.println("Test failed. Please see your element's path in last method.");
+        }
+
 
     }
 
