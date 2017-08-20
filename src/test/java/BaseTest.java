@@ -7,18 +7,17 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import org.apache.log4j.Logger;
 
-/**
- * Created by v.bondarenko on 24.07.17.
- */
 public class BaseTest {
+    Logger log = Logger.getLogger("rootLogger");
     static AndroidDriver<MobileElement> driver;
 
-
     @BeforeTest
-    public void setUp() {
+    public void setUp() throws IOException {
         File classpathRoot = new File(System.getProperty("user.dir"));
         File appDir = new File(classpathRoot, "/Android/app");
         File app = new File(appDir, "app-prodProm-debug.apk");
@@ -41,7 +40,7 @@ public class BaseTest {
     @AfterTest
 
     public void tearDown () {
-        driver.closeApp();
+        //driver.closeApp();
         driver.quit();
 
     }

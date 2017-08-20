@@ -1,0 +1,8 @@
+2017-08-20 21:11:56,064 [main] INFO  rootLogger - Enter name
+2017-08-20 21:12:03,499 [main] INFO  rootLogger - Enter phone
+2017-08-20 21:12:10,033 [main] INFO  rootLogger - Enter email
+2017-08-20 21:12:21,757 [main] INFO  rootLogger - Enter last name
+2017-08-20 21:12:29,708 [main] INFO  rootLogger - Choose region Александрия
+2017-08-20 21:12:29,845 [main] INFO  rootLogger - Enter address
+2017-08-20 21:12:36,736 [main] INFO  rootLogger - Click on submit button
+2017-08-20 21:12:37,799 [main] DEBUG rootLogger - Test passed

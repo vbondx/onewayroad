@@ -38,11 +38,13 @@ public class SignInPage extends BasePage {
     private MobileElement inputErrorPasswordField;
 
     public void enterEmailOrPhone (String emailOrPhone) {
+        log.info("Enter email or phone");
         emailPhoneField.sendKeys(emailOrPhone);
     }
 
-    public void enterValidPassword (String validPassword) {
-        passwordField.sendKeys(validPassword);
+    public void enterPassword (String password) {
+        log.info("Enter password");
+        passwordField.sendKeys(password);
     }
 
     public boolean notValidData() {
@@ -51,10 +53,12 @@ public class SignInPage extends BasePage {
     }
 
     public void submitNotValidData() {
+        log.info("Click on sumbit button with not valid data");
         submitButton.click();
     }
 
     public ProfilePage goToProfilePageAfterAuthorization() {
+        log.info("Click on submit button with not valid data");
         submitButton.click();
         return new ProfilePage(driver);
     }
@@ -90,7 +94,9 @@ public class SignInPage extends BasePage {
     }
 
     public RecoveryPasswordPage goToForgotPasswordPage() {
+        log.info("Click on forgot password button");
         forgotPasswordButton.click();
+        driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
         return new RecoveryPasswordPage(driver);
     }
 }

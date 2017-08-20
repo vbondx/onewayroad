@@ -2,6 +2,8 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
+import java.util.concurrent.TimeUnit;
+
 public class RecoveryPasswordPage extends BasePage {
     public RecoveryPasswordPage(AppiumDriver<MobileElement> driver) {
         super(driver);
@@ -26,27 +28,28 @@ public class RecoveryPasswordPage extends BasePage {
         emailPhoneField.sendKeys(emailOrPhone);
     }
 
-    public boolean inputErrorEmailDisplayed() {
-        boolean inputErrorEmailText = inputErrorEmail.isDisplayed();
+    public String inputErrorEmail() {
+        String inputErrorEmailText = inputErrorEmail.getText();
         return inputErrorEmailText;
     }
 
-    public boolean inputErrorPhoneDisplayed() {
-        boolean inputErrorPhoneText = inputErrorPhone.isDisplayed();
+    public String inputErrorPhone() {
+        String inputErrorPhoneText = inputErrorPhone.getText();
         return inputErrorPhoneText;
     }
 
     public RecoveryPasswordNextPage goToRecoveredPasswordPage() {
         continueButton.click();
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         return new RecoveryPasswordNextPage(driver);
     }
 
     public void submitNotValidData() {
+        log.info("Click on submit button with incorrect data");
         continueButton.click();
     }
 
-    public void clearData() {
-        emailPhoneField.clear();
+    public void clearData() { emailPhoneField.clear();
     }
 
     public boolean emailOrPhoneFieldDisplayed() {
@@ -55,6 +58,7 @@ public class RecoveryPasswordPage extends BasePage {
     }
 
     public RecoveryPasswordNextPage goToNextPage() {
+        log.info("Click on submit button with correct data");
         continueButton.click();
         return new RecoveryPasswordNextPage(driver);
     }

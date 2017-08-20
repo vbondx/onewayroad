@@ -16,12 +16,13 @@ public class RecoveryPasswordNextPage extends BasePage {
     @AndroidFindBy (id = "btnCheckMail")
     private MobileElement checkMailButton;
 
-    public boolean instructionTextDisplayed() {
-        boolean instructionText = instruction.isDisplayed();
+    public String instruction() {
+        String instructionText = instruction.getText();
         return instructionText;
     }
 
     public GoogleMailPage goToMail() {
+        log.info("Click on check mail button");
         checkMailButton.click();
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         return new GoogleMailPage(driver);

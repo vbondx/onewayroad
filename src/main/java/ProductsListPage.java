@@ -3,6 +3,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class ProductsListPage extends BasePage {
     public ProductsListPage(AppiumDriver<MobileElement> driver) {
@@ -42,6 +43,7 @@ public class ProductsListPage extends BasePage {
 
     public BasketPage goToBasketPageFromCard(int i) {
         itemElementsList.get(i).findElementByXPath("//android.widget.TextView[@text='В КОРЗИНУ']").click();
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         return new BasketPage(driver);
     }
 }
