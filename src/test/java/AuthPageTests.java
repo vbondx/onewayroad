@@ -1,4 +1,5 @@
 
+import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -19,11 +20,14 @@ public class AuthPageTests extends BaseTest {
         signInPage.enterPassword("1gp7mn24");
         signInPage.submitNotValidData();
         try {
-            log.info("Test passed");
             Assert.assertEquals(signInPage.notValidData(), true);
-        } catch (AssertionError e) {
-            log.warn("Test failed");
-            Assert.assertEquals(signInPage.notValidData(), true);
+            log.info("<Incorrect email> Test passed" + " " + getClass());
+        } catch (NoSuchElementException e) {
+            log.warn("<Incorrect email> Test failed: element not found." + " " +getClass());
+            log.warn(e.getMessage());
+        } catch (AssertionError e ) {
+            log.warn("<Incorrect email> Test failed: check error details." + " " + getClass());
+            log.warn(e.getMessage());
         }
     }
 
@@ -40,11 +44,14 @@ public class AuthPageTests extends BaseTest {
         signInPage.clearPasswordField();
         signInPage.submitNotValidData();
         try {
-            log.info("Test passed");
             Assert.assertEquals(signInPage.passwordFieldIsRequired(), true);
-        } catch (AssertionError e) {
-            log.warn("Test failed");
-            Assert.assertEquals(signInPage.passwordFieldIsRequired(), true);
+            log.info("<Password field is required> Test passed");
+        } catch (NoSuchElementException e) {
+            log.warn("<Password field is required> Test failed: element not found." + " " + getClass());
+            log.warn(e.getMessage());
+        } catch (AssertionError e ) {
+            log.warn("<Password field is required> Test failed: check error details." + " " + getClass());
+            log.warn(e.getMessage());
         }
     }
 
@@ -61,10 +68,14 @@ public class AuthPageTests extends BaseTest {
         signInPage.enterPassword("1gp7mn24");
         signInPage.submitNotValidData();
         try {
-            log.info("Test passed");
             Assert.assertEquals(signInPage.notValidData(), true);
-        } catch (AssertionError e) {
-            log.warn("Test failed");
+            log.info("<Email field is required> Test passed" + " " + getClass());
+        } catch (NoSuchElementException e) {
+            log.warn("<Email field is required> Test failed: element not found." + " " + getClass());
+            log.warn(e.getMessage());
+        } catch (AssertionError e ) {
+            log.warn("<Email field is required> Test failed: check error details." + " " + getClass());
+            log.warn(e.getMessage());
         }
     }
 
@@ -82,11 +93,14 @@ public class AuthPageTests extends BaseTest {
         signInPage.enterPassword("1gp7mn24");
         signInPage.submitNotValidData();
         try {
-            log.info("Test passed");
             Assert.assertEquals(signInPage.buttonLoginIsDisplayed(), true);
-        } catch (AssertionError e) {
-            log.warn("Test failed");
-            Assert.assertEquals(signInPage.buttonLoginIsDisplayed(), true);
+            log.info("<Not valid phone number> Test passed" + " " + getClass());
+        } catch (NoSuchElementException e) {
+            log.warn("<Not valid phone number> Test failed: element not found." + " " + getClass());
+            log.warn(e.getMessage());
+        } catch (AssertionError e ) {
+            log.warn("<Not valid phone number> Test failed: check error details." + " " + getClass());
+            log.warn(e.getMessage());
         }
     }
 
@@ -104,10 +118,14 @@ public class AuthPageTests extends BaseTest {
         signInPage.enterPassword("1gp7mn24");
         signInPage.submitNotValidData();
         try {
-            log.info("Test failed");
-        } catch (AssertionError e) {
             Assert.assertEquals(signInPage.notValidData(), true);
-            log.warn("Test failed");
+            log.info("<Validation phone < 12> Test passed" + " " + getClass());
+        } catch (NoSuchElementException e) {
+            log.warn("<Validation phone < 12> Test failed: element not found." + " " + getClass());
+            log.warn(e.getMessage());
+        } catch (AssertionError e ) {
+            log.warn("Test failed, check error details.");
+            log.warn(e.getMessage());
         }
     }
 
@@ -125,11 +143,14 @@ public class AuthPageTests extends BaseTest {
         signInPage.enterPassword("1gp7mn24");
         signInPage.submitNotValidData();
         try {
-            log.info("Test passed");
             Assert.assertEquals(signInPage.buttonLoginIsDisplayed(), true);
-        } catch (AssertionError e) {
-            log.warn("Test failed");
-            Assert.assertEquals(signInPage.buttonLoginIsDisplayed(), true);
+            log.info("<Validation phone > 12> Test passed" + " " + getClass());
+        } catch (NoSuchElementException e) {
+            log.warn("<Validation phone > 12> Test failed: element not found." + " " + getClass());
+            log.warn(e.getMessage());
+        } catch (AssertionError e ) {
+            log.warn("<Validation phone > 12> Test failed: check error details." + " " + getClass());
+            log.warn(e.getMessage());
         }
     }
 
@@ -147,17 +168,20 @@ public class AuthPageTests extends BaseTest {
         signInPage.enterPassword("1gp7mn24");
         signInPage.submitNotValidData();
         try {
-            log.info("Test passed");
             Assert.assertEquals(signInPage.buttonLoginIsDisplayed(),true);
-        } catch (AssertionError e) {
-            log.warn("Test failed");
-            Assert.assertEquals(signInPage.buttonLoginIsDisplayed(),true);
+            log.info("<Login error from backend> Test passed");
+        } catch (NoSuchElementException e) {
+            log.warn("<Login error from backend> Test failed: element not found." + " " + getClass());
+            log.warn(e.getMessage());
+        } catch (AssertionError e ) {
+            log.warn("<Login error from backend> Test failed: check error details." + " " + getClass());
+            log.warn(e.getMessage());
         }
     }
 
     @Test
 
-    public void passwordInputErrorShows() {
+    public void passwordInputErrorShows() {                     //FIXME: DUPLICATE
         BasePage basePage = new BasePage(driver);
         basePage.goToUnAuthProfilePage();
         UnAuthProfilePage unAuthProfilePage = new UnAuthProfilePage(driver);
@@ -168,11 +192,14 @@ public class AuthPageTests extends BaseTest {
         signInPage.clearPasswordField();
         signInPage.submitNotValidData();
         try {
-            log.info("Test passed");
             Assert.assertEquals(signInPage.passwordFieldIsRequired(),true);
-        } catch (AssertionError e) {
-            log.warn("Test failed");
-            Assert.assertEquals(signInPage.passwordFieldIsRequired(),true);
+            log.info("<Password field is required> Test passed" + " " + getClass());
+        } catch (NoSuchElementException e) {
+            log.warn("<Password field is required> Test failed: element not found." + " " + getClass());
+            log.warn(e.getMessage());
+        } catch (AssertionError e ) {
+            log.warn("<Password field is required> Test failed: check error details." + " " + getClass());
+            log.warn(e.getMessage());
         }
     }
 
@@ -185,11 +212,14 @@ public class AuthPageTests extends BaseTest {
         unAuthProfilePage.goToSignInPage();
         SignInPage signInPage = new SignInPage(driver);
         try {
-            log.info("Test passed");
             Assert.assertEquals(signInPage.clickOnEye(),true);
-        } catch (AssertionError e) {
-            log.warn("Test failed");
-            Assert.assertEquals(signInPage.clickOnEye(),true);
+            log.info("<Password displayed> Test passed" + " " + getClass());
+        } catch (NoSuchElementException e) {
+            log.warn("<Password displayed> Test failed: element not found." + " " + getClass());
+            log.warn(e.getMessage());
+        } catch (AssertionError e ) {
+            log.warn("<Password displayed> Test failed: check error details." + " " + getClass());
+            log.warn(e.getMessage());
         }
     }
 
@@ -208,11 +238,14 @@ public class AuthPageTests extends BaseTest {
         signInPage.goToProfilePageAfterAuthorization();
         ProfilePage profilePage = new ProfilePage(driver);
         try {
-            log.info("Test passed");
             Assert.assertEquals(profilePage.profileHeaderTextIsDisplayed(), true);
-        } catch (AssertionError e) {
-            log.warn("Test failed");
-            Assert.assertEquals(profilePage.profileHeaderTextIsDisplayed(), true);
+            log.info("<Sign in> Test passed" + " " + getClass());
+        } catch (NoSuchElementException e) {
+            log.warn("<Sign in> Test failed: element not found." + " " + getClass());
+            log.warn(e.getMessage());
+        } catch (AssertionError e ) {
+            log.warn("<Sign in> Test failed: check error details." + " " + getClass());
+            log.warn(e.getMessage());
         }
     }
 
@@ -227,11 +260,14 @@ public class AuthPageTests extends BaseTest {
         signInPage.goToCabinetApp();
         GooglePlayCabinetAppPage googlePlayCabinetAppPage = new GooglePlayCabinetAppPage(driver);
         try {
-            log.info("Test passed");
             Assert.assertEquals(googlePlayCabinetAppPage.cabinetAppDisplayed(),true);
-        } catch (AssertionError e) {
-            log.warn("Test failed");
-            Assert.assertEquals(googlePlayCabinetAppPage.cabinetAppDisplayed(),true);
+            log.info("<Go to cabinet application on Google Play> Test passed" + " " + getClass());
+        } catch (NoSuchElementException e) {
+            log.warn("<Go to cabinet application on Google Play> Test failed: element not found." + " " + getClass());
+            log.warn(e.getMessage());
+        } catch (AssertionError e ) {
+            log.warn("<Go to cabinet application on Google Play> Test failed: check error details." + " " + getClass());
+            log.warn(e.getMessage());
         }
     }
 }

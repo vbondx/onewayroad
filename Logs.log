@@ -1,8 +1,100 @@
-2017-08-20 21:11:56,064 [main] INFO  rootLogger - Enter name
-2017-08-20 21:12:03,499 [main] INFO  rootLogger - Enter phone
-2017-08-20 21:12:10,033 [main] INFO  rootLogger - Enter email
-2017-08-20 21:12:21,757 [main] INFO  rootLogger - Enter last name
-2017-08-20 21:12:29,708 [main] INFO  rootLogger - Choose region Александрия
-2017-08-20 21:12:29,845 [main] INFO  rootLogger - Enter address
-2017-08-20 21:12:36,736 [main] INFO  rootLogger - Click on submit button
-2017-08-20 21:12:37,799 [main] DEBUG rootLogger - Test passed
+2017-08-21 23:51:41,682 [main] INFO  rootLogger - Click on unathorized profile page icon
+2017-08-21 23:51:46,619 [main] INFO  rootLogger - <Password displayed> Test passed class AuthPageTests
+2017-08-21 23:51:55,868 [main] INFO  rootLogger - Click on unathorized profile page icon
+2017-08-21 23:52:06,199 [main] INFO  rootLogger - Enter password
+2017-08-21 23:52:11,931 [main] INFO  rootLogger - Click on sumbit button with not valid data
+2017-08-21 23:52:13,262 [main] INFO  rootLogger - <Email field is required> Test passed class AuthPageTests
+2017-08-21 23:52:20,078 [main] INFO  rootLogger - Click on unathorized profile page icon
+2017-08-21 23:52:27,956 [main] INFO  rootLogger - Enter email or phone
+2017-08-21 23:52:35,606 [main] INFO  rootLogger - Enter password
+2017-08-21 23:52:41,224 [main] INFO  rootLogger - Click on sumbit button with not valid data
+2017-08-21 23:52:42,520 [main] INFO  rootLogger - <Incorrect email> Test passed class AuthPageTests
+2017-08-21 23:52:49,216 [main] INFO  rootLogger - Click on unathorized profile page icon
+2017-08-21 23:52:57,813 [main] INFO  rootLogger - Enter email or phone
+2017-08-21 23:53:04,893 [main] INFO  rootLogger - Enter password
+2017-08-21 23:53:10,518 [main] INFO  rootLogger - Click on sumbit button with not valid data
+2017-08-21 23:53:12,067 [main] INFO  rootLogger - <Login error from backend> Test passed
+2017-08-21 23:53:18,126 [main] INFO  rootLogger - Click on unathorized profile page icon
+2017-08-21 23:53:20,932 [main] INFO  rootLogger - Click on cabinet application link
+2017-08-21 23:53:23,753 [main] INFO  rootLogger - <Go to cabinet application on Google Play> Test passed class AuthPageTests
+2017-08-21 23:53:30,145 [main] INFO  rootLogger - Click on unathorized profile page icon
+2017-08-21 23:53:37,682 [main] INFO  rootLogger - Enter email or phone
+2017-08-21 23:53:44,976 [main] INFO  rootLogger - Click on sumbit button with not valid data
+2017-08-21 23:53:46,299 [main] INFO  rootLogger - <Password field is required> Test passed
+2017-08-21 23:53:52,080 [main] INFO  rootLogger - Click on unathorized profile page icon
+2017-08-21 23:53:59,641 [main] INFO  rootLogger - Enter email or phone
+2017-08-21 23:54:06,738 [main] INFO  rootLogger - Click on sumbit button with not valid data
+2017-08-21 23:54:08,063 [main] INFO  rootLogger - <Password field is required> Test passed class AuthPageTests
+2017-08-21 23:54:13,866 [main] INFO  rootLogger - Click on unathorized profile page icon
+2017-08-21 23:54:21,225 [main] INFO  rootLogger - Enter email or phone
+2017-08-21 23:54:28,462 [main] INFO  rootLogger - Enter password
+2017-08-21 23:54:34,051 [main] INFO  rootLogger - Click on sumbit button with not valid data
+2017-08-21 23:54:35,617 [main] INFO  rootLogger - <Validation phone > 12> Test passed class AuthPageTests
+2017-08-21 23:54:41,681 [main] INFO  rootLogger - Click on unathorized profile page icon
+2017-08-21 23:54:49,806 [main] INFO  rootLogger - Enter email or phone
+2017-08-21 23:54:56,886 [main] INFO  rootLogger - Enter password
+2017-08-21 23:55:02,526 [main] INFO  rootLogger - Click on sumbit button with not valid data
+2017-08-21 23:55:04,072 [main] INFO  rootLogger - <Not valid phone number> Test passed class AuthPageTests
+2017-08-21 23:55:09,730 [main] INFO  rootLogger - Click on unathorized profile page icon
+2017-08-21 23:55:18,016 [main] INFO  rootLogger - Enter email or phone
+2017-08-21 23:55:25,150 [main] INFO  rootLogger - Enter password
+2017-08-21 23:55:30,759 [main] INFO  rootLogger - Click on sumbit button with not valid data
+2017-08-21 23:55:32,097 [main] INFO  rootLogger - <Validation phone < 12> Test passed class AuthPageTests
+2017-08-21 23:55:38,548 [main] INFO  rootLogger - Click on unathorized profile page icon
+2017-08-21 23:55:46,024 [main] INFO  rootLogger - Enter email or phone
+2017-08-21 23:55:53,767 [main] INFO  rootLogger - Enter password
+2017-08-21 23:55:59,561 [main] INFO  rootLogger - Click on submit button with not valid data
+2017-08-21 23:56:01,715 [main] INFO  rootLogger - <Sign in> Test passed class AuthPageTests
+2017-08-21 23:56:07,564 [main] INFO  rootLogger - Search
+2017-08-21 23:56:17,233 [main] INFO  rootLogger - Click on buy button in product card
+2017-08-21 23:56:17,491 [main] INFO  rootLogger - Click on basket button in product card
+2017-08-21 23:56:19,019 [main] INFO  rootLogger - Click on buy button
+2017-08-21 23:56:20,088 [main] INFO  rootLogger - Enter name
+2017-08-21 23:56:26,834 [main] INFO  rootLogger - Enter phone
+2017-08-21 23:56:32,189 [main] INFO  rootLogger - Enter email
+2017-08-21 23:56:43,876 [main] INFO  rootLogger - Enter last name
+2017-08-21 23:56:51,511 [main] INFO  rootLogger - Choose region Александрия
+2017-08-21 23:56:51,643 [main] INFO  rootLogger - Enter address
+2017-08-21 23:56:58,081 [main] INFO  rootLogger - Click on submit button
+2017-08-21 23:57:08,020 [main] INFO  rootLogger - Search
+2017-08-21 23:57:18,032 [main] INFO  rootLogger - Click on buy button in product card
+2017-08-21 23:57:18,301 [main] INFO  rootLogger - Click on basket button in product card
+2017-08-21 23:57:19,719 [main] INFO  rootLogger - Click on buy button
+2017-08-21 23:57:20,653 [main] INFO  rootLogger - Enter name
+2017-08-21 23:57:27,197 [main] INFO  rootLogger - Enter phone
+2017-08-21 23:57:34,308 [main] INFO  rootLogger - Enter email
+2017-08-21 23:57:45,680 [main] INFO  rootLogger - Enter last name
+2017-08-21 23:57:53,529 [main] INFO  rootLogger - Choose region Александрия
+2017-08-21 23:57:53,682 [main] INFO  rootLogger - Enter address
+2017-08-21 23:58:00,297 [main] INFO  rootLogger - Click on submit button
+2017-08-21 23:58:02,260 [main] INFO  rootLogger - <Create order> Test passed class CheckoutTests
+2017-08-21 23:58:08,195 [main] INFO  rootLogger - Search
+2017-08-21 23:58:19,010 [main] INFO  rootLogger - Click on buy button in product card
+2017-08-21 23:58:19,276 [main] INFO  rootLogger - Click on basket button in product card
+2017-08-21 23:58:21,203 [main] INFO  rootLogger - Click on buy button
+2017-08-21 23:58:22,228 [main] INFO  rootLogger - Enter name
+2017-08-21 23:58:29,997 [main] INFO  rootLogger - Enter phone
+2017-08-21 23:58:43,849 [main] INFO  rootLogger - Click on unathorized profile page icon
+2017-08-21 23:58:46,332 [main] INFO  rootLogger - Click on forgot password button
+2017-08-21 23:58:52,160 [main] INFO  rootLogger - Enter email or phone
+2017-08-21 23:58:58,724 [main] INFO  rootLogger - <Incorrect email> Test passed
+2017-08-21 23:59:04,649 [main] INFO  rootLogger - Click on unathorized profile page icon
+2017-08-21 23:59:07,233 [main] INFO  rootLogger - Click on forgot password button
+2017-08-21 23:59:13,060 [main] INFO  rootLogger - Enter email or phone
+2017-08-21 23:59:19,147 [main] INFO  rootLogger - Click on submit button with correct data
+2017-08-21 23:59:19,898 [main] INFO  rootLogger - Click on check mail button
+2017-08-21 23:59:22,774 [main] INFO  rootLogger - <Open email page> Test passed
+2017-08-21 23:59:29,130 [main] INFO  rootLogger - Click on unathorized profile page icon
+2017-08-21 23:59:31,820 [main] INFO  rootLogger - Click on forgot password button
+2017-08-21 23:59:37,559 [main] INFO  rootLogger - Enter email or phone
+2017-08-21 23:59:43,319 [main] INFO  rootLogger - Click on submit button with incorrect data
+2017-08-21 23:59:44,745 [main] INFO  rootLogger - <Validation phone > 12> Test passed
+2017-08-21 23:59:50,564 [main] INFO  rootLogger - Click on unathorized profile page icon
+2017-08-21 23:59:53,101 [main] INFO  rootLogger - Click on forgot password button
+2017-08-21 23:59:58,620 [main] INFO  rootLogger - Enter email or phone
+2017-08-22 00:00:04,974 [main] INFO  rootLogger - <Validation phone < 12> Test passed
+2017-08-22 00:00:10,664 [main] INFO  rootLogger - Click on unathorized profile page icon
+2017-08-22 00:00:13,200 [main] INFO  rootLogger - Click on forgot password button
+2017-08-22 00:00:19,031 [main] INFO  rootLogger - Enter email or phone
+2017-08-22 00:00:25,078 [main] INFO  rootLogger - Click on submit button with correct data
+2017-08-22 00:00:26,600 [main] INFO  rootLogger - <Recovery password> Test passed

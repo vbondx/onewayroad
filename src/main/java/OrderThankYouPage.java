@@ -15,8 +15,8 @@ public class OrderThankYouPage extends BasePage {
     @AndroidFindBy(id = "tvText")
     private MobileElement thankYouPageText;
 
-    public String thankYouPageTextDisplayed() {
-        String actualText = thankYouPageText.getText();
+    public boolean thankYouPageTextDisplayed() {
+        boolean actualText = thankYouPageText.isDisplayed();
         return actualText;
     }
 

@@ -25,6 +25,7 @@ public class RecoveryPasswordPage extends BasePage {
     private MobileElement inputErrorPhone;
 
     public void enterEmailOrPhone (String emailOrPhone) {
+        log.info("Enter email or phone");
         emailPhoneField.sendKeys(emailOrPhone);
     }
 
@@ -36,12 +37,6 @@ public class RecoveryPasswordPage extends BasePage {
     public String inputErrorPhone() {
         String inputErrorPhoneText = inputErrorPhone.getText();
         return inputErrorPhoneText;
-    }
-
-    public RecoveryPasswordNextPage goToRecoveredPasswordPage() {
-        continueButton.click();
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        return new RecoveryPasswordNextPage(driver);
     }
 
     public void submitNotValidData() {

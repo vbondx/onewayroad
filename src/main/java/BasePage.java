@@ -48,31 +48,37 @@ public class BasePage {
 
 
     public UnAuthProfilePage goToUnAuthProfilePage() {
+        log.info("Click on unathorized profile page icon");
         bottomProfile.click();
         return new UnAuthProfilePage(driver);
     }
 
     public ProfilePage goToProfilePage() {
+        log.info("Click on profile page icon");
         bottomProfile.click();
         return new ProfilePage(driver);
     }
 
     public EmptyFavoriteProductsPage goToEmptyFavoriteProductsPage() {
+        log.info("Click on empty favorites icon");
         bottomFavorite.click();
         return new EmptyFavoriteProductsPage(driver);
     }
 
     public FavoriteProductsPage goToFavoriteProductsPage() {
+        log.info("Click on favorites icon");
         bottomFavorite.click();
         return new FavoriteProductsPage(driver);
     }
 
     public CategoriesPage goToCategoriesPage() {
+        log.info("Click on profile icon");
         bottomProfile.click();
         return new CategoriesPage(driver);
     }
 
     public ProductsListPage search(String search_value) {
+        log.info("Search");
         headerSearchField.click();
         driver.findElementById("search_view").sendKeys(search_value);        //FIXME: ENTER NOT WORKS WITH SEARCH
         ((AndroidDriver) driver).pressKeyCode(66);
@@ -85,6 +91,7 @@ public class BasePage {
     }
 
     public BasketPage goToBasket() {
+        log.info("Click on basket icon");
         cartIcon.click();
         return new BasketPage(driver);
     }

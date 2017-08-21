@@ -13,6 +13,7 @@ public class BasketPage extends BasePage {
     private MobileElement buttonOrder;
 
     public CheckoutPage goToCheckoutPage() {
+        log.info("Click on buy button");
         buttonOrder.click();
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         return new CheckoutPage(driver);

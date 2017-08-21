@@ -88,6 +88,7 @@ public class SignInPage extends BasePage {
     }
 
     public GooglePlayCabinetAppPage goToCabinetApp() {
+        log.info("Click on cabinet application link");
         cabinetAppButton.click();
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         return new GooglePlayCabinetAppPage(driver);

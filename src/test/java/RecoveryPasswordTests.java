@@ -16,10 +16,15 @@ public class RecoveryPasswordTests extends BaseTest {
         forgotPasswordPage.clearData();
         forgotPasswordPage.enterEmailOrPhone("minnnune@gmail,com");
         try {
-            log.info("Test passed");
             Assert.assertEquals(forgotPasswordPage.inputErrorEmail(), "Неверный формат");
+            log.info("<Incorrect email> Test passed" + " " + getClass());
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            log.warn("<Incorrect email> Test failed: element not found." + " " + getClass());
+            log.warn(e.getMessage());
+
         } catch (AssertionError e) {
-            log.warn("Test failed");
+            log.warn("<Incorrect email> Test failed: check error details." + " " + getClass());
+            log.warn(e.getMessage());
         }
     }
 
@@ -36,11 +41,14 @@ public class RecoveryPasswordTests extends BaseTest {
         forgotPasswordPage.clearData();
         forgotPasswordPage.enterEmailOrPhone("+38063235034");
         try {
-            log.info("Test passed");
             Assert.assertEquals(forgotPasswordPage.inputErrorPhone(), "Телефон в формате: +380XXXXXXX");
+            log.info("<Validation phone < 12> Test passed" + " " + getClass());
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            log.warn("<Validation phone < 12> Test failed: element not found." + " " + getClass());
+            log.warn(e.getMessage());
         } catch (AssertionError e) {
-            log.warn("Test failed");
-            Assert.assertEquals(forgotPasswordPage.inputErrorPhone(), "Телефон в формате: +380XXXXXXX");
+            log.warn("<Validation phone < 12> Test failed: check error details." + " " + getClass());
+            log.warn(e.getMessage());
         }
     }
 
@@ -58,11 +66,14 @@ public class RecoveryPasswordTests extends BaseTest {
         forgotPasswordPage.enterEmailOrPhone("+3806323503422");
         forgotPasswordPage.submitNotValidData();
         try {
-            log.info("Test paseed");
             Assert.assertEquals(forgotPasswordPage.emailOrPhoneFieldDisplayed(),true);
+            log.info("<Validation phone > 12> Test passed" + " " + getClass());
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            log.warn("<Validation phone > 12> Test failed: element not found." + " " + getClass());
+            log.warn(e.getMessage());
         } catch (AssertionError e) {
-            log.warn("Test failed");
-            Assert.assertEquals(forgotPasswordPage.emailOrPhoneFieldDisplayed(), true);
+            log.warn("<Validation phone > 12> Test failed: check error details." + " " + getClass());
+            log.warn(e.getMessage());
         }
     }
 
@@ -81,11 +92,14 @@ public class RecoveryPasswordTests extends BaseTest {
         forgotPasswordPage.goToNextPage();
         RecoveryPasswordNextPage recoveryPasswordNextPage = new RecoveryPasswordNextPage(driver);
         try {
-            log.info("Test passed");
             Assert.assertEquals(recoveryPasswordNextPage.instruction(), "Мы отправили инструкцию");
+            log.info("<Recovery password> Test passed" + " " + getClass());
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            log.warn("<Recovery password> Test failed: element not found." + " " + getClass());
+            log.warn(e.getMessage());
         } catch (AssertionError e) {
-            log.warn("Test failed");
-            Assert.assertEquals(recoveryPasswordNextPage.instruction(), "Мы отправили инструкцию");
+            log.warn("<Recovery password> Test failed: check error details." + " " + getClass());
+            log.warn(e.getMessage());
         }
     }
 
@@ -106,11 +120,14 @@ public class RecoveryPasswordTests extends BaseTest {
         recoveryPasswordNextPage.goToMail();
         GoogleMailPage googleMailPage = new GoogleMailPage(driver);
         try {
-            log.info("Test passed");
             Assert.assertEquals(googleMailPage.googleMailisDisplayed(), true);
+            log.info("<Open email page> Test passed" + " " + getClass());
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            log.warn("<Open email page> Test failed: element not found." + " " + getClass());
+            log.warn(e.getMessage());
         } catch (AssertionError e) {
-            log.warn("Test failed");
-            Assert.assertEquals(googleMailPage.googleMailisDisplayed(), true);
+            log.warn("<Open email page> Test failed: check error details." + " " + getClass());
+            log.warn(e.getMessage());
         }
     }
 

@@ -1,5 +1,6 @@
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -17,7 +18,7 @@ public class BaseTest {
     static AndroidDriver<MobileElement> driver;
 
     @BeforeTest
-    public void setUp() throws IOException {
+    public void setUp() {
         File classpathRoot = new File(System.getProperty("user.dir"));
         File appDir = new File(classpathRoot, "/Android/app");
         File app = new File(appDir, "app-prodProm-debug.apk");
@@ -45,11 +46,11 @@ public class BaseTest {
 
     }
 
-    /*@BeforeMethod
+    @BeforeMethod
 
     public void setUpBeforeMethod() {
         driver.launchApp();
-    }*/
+    }
 
 
     @AfterMethod

@@ -33,15 +33,18 @@ public class ProductsListPage extends BasePage {
     }
 
     public BasketPage goToBasketPage() {
+        log.info("Click on basket icon");
         basketIcon.click();
         return new BasketPage(driver);
     }
 
     public void buyProduct(int i) {
+        log.info("Click on buy button in product card");
         itemElementsList.get(i).findElementByXPath("//android.widget.TextView[@text='КУПИТЬ']").click();
     }
 
     public BasketPage goToBasketPageFromCard(int i) {
+        log.info("Click on basket button in product card");
         itemElementsList.get(i).findElementByXPath("//android.widget.TextView[@text='В КОРЗИНУ']").click();
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         return new BasketPage(driver);
