@@ -48,7 +48,7 @@ public class BasePage {
 
 
     public UnAuthProfilePage goToUnAuthProfilePage() {
-        log.info("Click on unathorized profile page icon");
+        log.info("Click on unauthorized profile page icon");
         bottomProfile.click();
         return new UnAuthProfilePage(driver);
     }

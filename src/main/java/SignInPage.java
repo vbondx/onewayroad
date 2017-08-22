@@ -53,7 +53,7 @@ public class SignInPage extends BasePage {
     }
 
     public void submitNotValidData() {
-        log.info("Click on sumbit button with not valid data");
+        log.info("Click on submit button with not valid data");
         submitButton.click();
     }
 
