@@ -95,4 +95,46 @@ public class BasePage {
         cartIcon.click();
         return new BasketPage(driver);
     }
+
+    //    public String getToastMessage() throws InterruptedException {
+//
+//        String filePath = System.getProperty("user.dir");
+//        File file = new File(filePath, "/toastmessages");
+//        sleep(2000l);
+//        captureScreenshot(filePath + "/toastmessages");
+//        String str = "";
+//        BytePointer outText;
+//        tesseract.TessBaseAPI api = new tesseract.TessBaseAPI();
+//
+//        if (api.Init(".", "RUS") != 0) {
+//            System.err.println("Could not initialize tesseract.");
+//            System.exit(1);
+//        }
+//
+//        lept.PIX image = pixRead(file+"/toastmessage1.png");
+//        api.SetImage(image);
+//
+//        // Get OCR result
+//        outText = api.GetUTF8Text();
+//        str = outText.getString();
+//        System.out.println("OCR output:\n" + str);
+//
+//        // Destroy used object and release memory
+//        api.End();
+//        outText.deallocate();
+//        pixDestroy(image);
+//        System.out.println(str);
+//        return str;
+//    }
+
+//    public void captureScreenshot(String path) {
+//        File scrFile = ((TakesScreenshot) driver)
+//                .getScreenshotAs(OutputType.FILE);
+//        try {
+//            String filePath=path+"/toastmessage1.png";
+//            FileUtils.copyFile(scrFile,  new File(filePath));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }
